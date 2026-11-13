@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><!--TITLE--></title>
+<meta name="theme-color" content="#dcdfe2">
+<style>
+  :root { --ink: #1d1c1a; --muted: #62676c; --line: #d5d8db; --panel: #f3f4f5; --accent: #c4622d; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; font: 13px/1.4 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: #dcdfe2; }
+  .shell { display: grid; grid-template-columns: 1fr 300px; height: 100%; }
+  #app { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+  #app canvas { display: block; width: 100%; height: 100%; }
+  header { position: absolute; left: 20px; right: 20px; top: 16px; pointer-events: none; }
+  header h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+  header p { margin: 2px 0 0; color: var(--muted); }
+  .specs { position: absolute; left: 20px; bottom: 16px; color: var(--muted); font-size: 12px; pointer-events: none; }
+  .specs b { color: var(--ink); font-weight: 600; }
+  #tip { position: absolute; left: 0; top: 0; padding: 4px 8px; background: var(--ink); color: #fff; border-radius: 4px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity .12s; white-space: nowrap; }
+  #ui { background: var(--panel); border-left: 1px solid var(--line); overflow-y: auto; padding: 14px 16px 24px; }
+  section { padding: 10px 0 12px; border-bottom: 1px solid var(--line); }
+  section:last-child { border: 0; }
+  h3 { margin: 0 0 8px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+  .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+  header nav { margin-top: 6px; pointer-events: auto; }
+  header nav a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  select { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); width: 100%; }
+  .half { display: grid; gap: 6px; margin-bottom: 12px; }
+  .half .lbl { font-weight: 600; }
+  .note { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+  button { font: inherit; padding: 6px 10px; border: 1px solid var(--line); background: #fff; border-radius: 6px; cursor: pointer; color: var(--ink); }
+  button:hover { border-color: #aeb3b8; }
+  button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  button.primary { width: 100%; background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; padding: 9px; }
+  .list { display: grid; gap: 4px; }
+  label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  input[type=checkbox] { accent-color: var(--accent); margin: 0; }
+  label.range { flex-direction: column; align-items: stretch; gap: 2px; margin-bottom: 8px; }
+  label.range span { color: var(--muted); }
+  input[type=range] { accent-color: var(--accent); width: 100%; }
+  #app canvas { touch-action: none; }
+  @media (max-width: 760px) {
+    html, body { height: auto; overflow-x: clip; }
+    .shell { display: block; height: auto; }
+    #app { position: sticky; top: 0; z-index: 2; height: 56svh; border-bottom: 1px solid var(--line); background: #dcdfe2; }
+    header { left: 14px; top: 10px; }
+    header h1 { font-size: 18px; }
+    header p { font-size: 12px; }
+    .specs { display: none; }
+    #ui { border-left: 0; padding: 4px 14px 40px; overflow: visible; }
+    button { padding: 9px 12px; }
+    label { min-height: 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div id="app">
+    <header><h1><!--H1--></h1><p><!--SUB--></p><!--NAV--></header>
+    <div class="specs"><!--SPECS--></div>
+    <div id="tip"></div>
+  </div>
+  <aside id="ui"></aside>
+</div>
+<!--SCRIPT-->
+</body>
+</html>
